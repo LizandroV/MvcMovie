@@ -1,0 +1,58 @@
+@model MvcMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Edit Movie";
+}
+
+<h2>Edit Movie</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-5">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            @* Campo oculto: el Id no se muestra al usuario pero sí se envía al servidor *@
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label fw-semibold"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ReleaseDate" class="form-label fw-semibold"></label>
+                <input asp-for="ReleaseDate" class="form-control" />
+                <span asp-validation-for="ReleaseDate" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Genre" class="form-label fw-semibold"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Price" class="form-label fw-semibold"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Rating" class="form-label fw-semibold"></label>
+                <input asp-for="Rating" class="form-control" />
+                <span asp-validation-for="Rating" class="text-danger small"></span>
+            </div>
+
+            <div class="d-flex gap-2 mt-4">
+                <input type="submit" value="Save Changes" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

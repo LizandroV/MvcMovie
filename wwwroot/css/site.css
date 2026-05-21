@@ -1,0 +1,41 @@
+/* wwwroot/css/site.css
+   ✅ Requerimiento: padding en todos los elementos de formulario
+   para que el texto no quede pegado al borde del campo.
+*/
+
+/* ── Padding universal para inputs, selects y textareas ─────────────────── */
+input,
+select,
+textarea {
+    padding: 0.5rem 0.75rem !important;
+}
+
+/* ── Asegurar que el padding no rompa el ancho con box-sizing ────────────── */
+input,
+select,
+textarea {
+    box-sizing: border-box;
+}
+
+/* ── Espaciado extra en los labels de formularios ────────────────────────── */
+.form-label {
+    margin-bottom: 0.35rem;
+}
+
+/* ── Mejorar legibilidad de la tabla de películas ────────────────────────── */
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+.footer {
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* ── Navbar brand más visible ────────────────────────────────────────────── */
+.navbar-brand {
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+}
